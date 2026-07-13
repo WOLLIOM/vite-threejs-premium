@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>3D Real Estate Tour</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-bar"></div>
+            <div class="loader-text">Loading 3D Experience…</div>
+        </div>
+    </div>
+
+    <div id="app"></div>
+
+    <!-- ✅ USE CDN IMPORTS INSTEAD OF LOCAL -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <!-- ✅ LOAD YOUR EXISTING main.js -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
