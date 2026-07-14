@@ -1,6 +1,5 @@
 // ── GitHub Pages Base Path ──
-const BASE_PATH = '/vite-threejs-premium/public';  // ← Added /public
-
+const BASE_PATH = '/vite-threejs-premium';  // ✅ Correct - files are at root level
 // ── Use CDN imports ──
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
