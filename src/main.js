@@ -1,5 +1,5 @@
 // ── GitHub Pages Base Path ──
-const BASE_PATH = '/vite-threejs-premium';
+const BASE_PATH = '/vite-threejs-premium/public';  // ← Added /public
 
 // ── Use CDN imports ──
 import * as THREE from 'three';
