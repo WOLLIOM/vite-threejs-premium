@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>3D Real Estate Tour</title>n.css" />
+    <title>3D Real Estate Tour</title>
     <script type="importmap">
     {
         "imports": {
@@ -12,22 +12,32 @@
         }
     }
     </script>
-  <script type="module" crossorigin src="/vite-threejs-premium/assets/index-nXJ-Svx5.js"></script>
+  <script type="module" crossorigin src="/vite-threejs-premium/assets/index-CisvleBg.js"></script>
   <link rel="stylesheet" crossorigin href="/vite-threejs-premium/assets/index-D2qCIKo7.css">
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="loader-container">
-            <div class="loader-bar"></div>
+    <a href="#main-content" style="position: absolute; top: -1000px; left: -1000px; z-index: 9999; background: white; color: black; padding: 10px;">
+        Skip to main content
+    </a>
+
+    <header role="banner" aria-label="Site header">
+        <!-- Optional: Add header content if needed -->
+    </header>
+
+    <main id="main-content" role="main">
+        <div id="loading-screen" role="status" aria-live="polite" aria-label="Loading 3D experience">
+            <div class="loader-spinner" aria-hidden="true"></div>
             <div class="loader-text">Loading 3D Experience…</div>
         </div>
-    </div>
 
-    <div id="app"></div>
+        <div id="app" role="application" aria-label="3D Real Estate Tour"></div>
+    </main>
 
-    <!-- ✅ USE CDN IMPORTS -->
+    <footer role="contentinfo" aria-label="Site footer">
+        <!-- Optional: Add footer content if needed -->
+    </footer>
 
 
-    <!-- ✅ LOAD main.js with correct path -->
+
 </body>
 </html>
