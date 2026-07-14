@@ -1,4 +1,7 @@
-// ── Use CDN imports for InfinityFree ──
+// ── GitHub Pages Base Path ──
+const BASE_PATH = '/vite-threejs-premium';
+
+// ── Use CDN imports ──
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -11,6 +14,7 @@ import { LoadingScreen } from './ui/LoadingScreen.js';
 import { PlayerController } from './player/PlayerController.js';
 import { RealEstate } from './world/RealEstate.js';
 
+// ── Pass BASE_PATH to RealEstate ──
 const loadingScreen = new LoadingScreen();
 loadingScreen.show();
 
@@ -18,7 +22,7 @@ const container = document.getElementById('app');
 const engine = new Engine(container);
 const { scene, camera, renderer } = engine;
 
-const realEstate = new RealEstate(scene, renderer, camera);
+const realEstate = new RealEstate(scene, renderer, camera, BASE_PATH);
 let player = null;
 
 // ── Check if mobile ──
