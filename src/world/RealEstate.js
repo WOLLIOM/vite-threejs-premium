@@ -4,10 +4,11 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { EXRLoader } from 'three/addons/loaders/EXRLoader.js';
 
 export class RealEstate {
-    constructor(scene, renderer, camera) {
+    constructor(scene, renderer, camera, basePath = '') {
         this.scene = scene;
         this.renderer = renderer;
         this.camera = camera;
+        this.basePath = basePath; // ← Store base path for GitHub Pages
         this.model = null;
         this.collisionMeshes = [];
         this.groundY = 4;
@@ -31,8 +32,11 @@ export class RealEstate {
     async loadEXR() {
         return new Promise((resolve) => {
             const loader = new EXRLoader();
+            const exrPath = `${this.basePath}/environments/background.exr`;
+            console.log('📂 Loading EXR from:', exrPath);
+            
             loader.load(
-                '/environments/background.exr',
+                exrPath,
                 (texture) => {
                     const pmremGenerator = new THREE.PMREMGenerator(this.renderer);
                     const envMap = pmremGenerator.fromEquirectangular(texture).texture;
@@ -77,13 +81,15 @@ export class RealEstate {
     async loadGLB() {
         return new Promise((resolve, reject) => {
             const loader = new GLTFLoader();
+            const modelPath = `${this.basePath}/models/home.glb`;
+            console.log('📂 Loading GLB from:', modelPath);
             
             const dracoLoader = new DRACOLoader();
             dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
             loader.setDRACOLoader(dracoLoader);
 
             loader.load(
-                '/models/home.glb',
+                modelPath,
                 (gltf) => {
                     this.model = gltf.scene;
                     
