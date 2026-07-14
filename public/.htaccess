@@ -1,0 +1,26 @@
+# Enable CORS
+Header set Access-Control-Allow-Origin "*"
+
+# MIME types for 3D files
+AddType model/gltf-binary .glb
+AddType image/x-exr .exr
+AddType image/hdr .hdr
+AddType application/octet-stream .bin
+
+# Enable compression
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+
+# Cache static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js|glb|exr)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Handle SPA routing (if needed)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
