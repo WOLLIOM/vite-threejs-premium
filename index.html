@@ -7,7 +7,7 @@
     <meta name="description" content="Simax builds fully walkable 3D tours for real estate, restaurants, salons and more — so customers can explore a space before they ever visit." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Anton&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <script type="importmap">
     {
         "imports": {
@@ -16,11 +16,17 @@
         }
     }
     </script>
-  <script type="module" crossorigin src="/vite-threejs-premium/assets/index-DCEpwubx.js"></script>
-  <link rel="stylesheet" crossorigin href="/vite-threejs-premium/assets/index-BOCfNPw7.css">
+  <script type="module" crossorigin src="/vite-threejs-premium/assets/index-CWNB1e4w.js"></script>
+  <link rel="stylesheet" crossorigin href="/vite-threejs-premium/assets/index-BL1X8qJK.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ── Modular grid overlay (visual only, matches the reference's
+         column/row lines with dot intersections) ── -->
+    <div class="grid-overlay" aria-hidden="true">
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+    </div>
 
     <!-- ── Preloader ── -->
     <div id="preloader" aria-hidden="true">
@@ -54,32 +60,49 @@
     </header>
 
     <section id="landing" aria-label="Introduction">
-        <div class="landing-bg" aria-hidden="true"></div>
-        <div class="landing-inner">
-            <p class="eyebrow reveal-text">3D WALKTHROUGH STUDIO</p>
-            <h1 class="split-lines">
-                <span class="line"><span>Let people walk</span></span>
-                <span class="line"><span>through it <em>before</em></span></span>
-                <span class="line"><span>they show up.</span></span>
-            </h1>
-            <p class="sub reveal-text">Simax turns a floor plan into a fully explorable 3D space — real estate today, restaurants and salons next. One link, any phone, no app.</p>
-            <div class="landing-actions reveal-text">
-                <button id="enter-tour-btn" class="btn-primary magnetic" type="button">
-                    Enter the Space
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <a href="#contact" class="btn-ghost magnetic">Book Us For Your Space</a>
+        <div class="hero-grid">
+            <div class="hero-panel panel-a">
+                <div class="scan-line" aria-hidden="true"></div>
             </div>
-            <div class="landing-meta reveal-text">
-                <div><strong data-count="60">0</strong><span>fps on phone</span></div>
-                <div><strong data-count="3" data-prefix="&lt;">0</strong><span>sec to first walk</span></div>
-                <div><strong data-count="0">0</strong><span>apps to install</span></div>
+            <div class="hero-panel panel-b">
+                <p class="eyebrow reveal-text">.SIMAX</p>
+                <p class="hero-tagline serif-italic reveal-text">Be walked through —<br>at the speed of thought</p>
+                <p class="sub reveal-text">Simax turns a floor plan into a fully explorable 3D space — real estate today, restaurants and salons next. One link, any phone, no app.</p>
+            </div>
+            <div class="hero-panel panel-wordmark">
+                <h1 class="giant-wordmark">SIMAX</h1>
+            </div>
+            <div class="hero-panel panel-c">
+                <div class="wire-cube" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" fill="none"><path d="M20 40L60 20L100 40L100 80L60 100L20 80Z" stroke="currentColor" stroke-width="1"/><path d="M20 40L60 60L100 40M60 60V100" stroke="currentColor" stroke-width="1"/></svg>
+                </div>
             </div>
         </div>
+
+        <div class="landing-actions reveal-text">
+            <button id="enter-tour-btn" class="btn-primary magnetic" type="button">
+                Enter the Space
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <a href="#contact" class="btn-ghost magnetic">Book Us For Your Space</a>
+        </div>
+        <div class="landing-meta reveal-text">
+            <div><strong data-count="60">0</strong><span>fps on phone</span></div>
+            <div><strong data-count="3" data-prefix="&lt;">0</strong><span>sec to first walk</span></div>
+            <div><strong data-count="0">0</strong><span>apps to install</span></div>
+        </div>
+
         <div class="scroll-hint" aria-hidden="true">
             <span>Scroll</span>
             <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M5 1v13M1 10l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
+    </section>
+
+    <!-- ── Interstitial manifesto band, edge-to-edge cropped type ── -->
+    <section class="manifesto-band" aria-hidden="true">
+        <h2 class="crop-type">
+            <span>BUILT</span><span class="serif-italic">to be</span><span>WALKED</span>
+        </h2>
     </section>
 
     <section id="about" class="section-band" aria-label="About Simax">
@@ -89,8 +112,8 @@
                 <h2 class="reveal-on-scroll">A space you can<br>actually walk into.</h2>
             </div>
             <div class="about-copy">
-                <p class="reveal-on-scroll">Most listings show you photos. Simax scans the real space and rebuilds it as a fully walkable 3D environment — you move through it with WASD on desktop or a thumb joystick on mobile, look around freely, and stop at hotspots for details.</p>
-                <p class="reveal-on-scroll">No app download, no headset. It runs straight in the browser, tuned to stay smooth even on a mid-range phone — because that's where most of your visitors actually are.</p>
+                <p class="reveal-on-scroll"><span class="idx">.01</span>Most listings show you photos. Simax scans the real space and rebuilds it as a fully walkable 3D environment — you move through it with WASD on desktop or a thumb joystick on mobile, look around freely, and stop at hotspots for details.</p>
+                <p class="reveal-on-scroll"><span class="idx">.02</span>No app download, no headset. It runs straight in the browser, tuned to stay smooth even on a mid-range phone — because that's where most of your visitors actually are.</p>
             </div>
         </div>
     </section>
@@ -189,17 +212,25 @@
     </section>
 
     <footer role="contentinfo" aria-label="Site footer">
-        <div class="footer-inner">
-            <div class="brand">
-                <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
-                    <rect x="1" y="1" width="38" height="38" rx="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                    <path d="M11 27 L20 11 L29 27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
-                    <path d="M15.2 27 L20 18.4 L24.8 27" fill="currentColor" opacity="0.9"/>
-                </svg>
-                <span class="brand-name">SIMAX</span>
+        <div class="footer-top">
+            <div class="footer-col">
+                <p class="eyebrow">.MENU</p>
+                <a href="#about">About</a>
+                <a href="#tech">Technology</a>
+                <a href="#work">Industries</a>
+                <a href="#tour">The Tour</a>
             </div>
-            <p class="footer-tagline">Walkable 3D tours for real businesses.</p>
-            <p class="footer-fine">© 2026 Simax Studio. Demo build.</p>
+            <div class="footer-col">
+                <p class="eyebrow">.CONTACT</p>
+                <a href="mailto:hello@simax.studio">hello@simax.studio</a>
+                <a href="tel:+14039030856">+1 (403) 903-0856</a>
+                <span>Calgary, AB · Canada</span>
+            </div>
+        </div>
+        <h2 class="footer-wordmark">SIMAX</h2>
+        <div class="footer-bottom">
+            <span>© 2026 Simax Studio. Demo build.</span>
+            <span>Walkable 3D tours for real businesses.</span>
         </div>
     </footer>
 
